@@ -1,0 +1,105 @@
+1.Solving problems using array functions on rest countries data.
+	
+	a.get all the countries from asia continent /region using filter function
+	
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "https://restcountries.eu/rest/v2/all");
+
+			xhr.onload = function () {
+			  var data = JSON.parse(this.response);
+			 
+			  data.filter((element) => {
+					if(element.region=="Asia")
+					console.log (`Country : ${element.name}`);  
+			});
+
+			};
+			xhr.onerror = function () {
+			  console.log("Error", this.statusText);
+			};
+
+			xhr.send();
+
+	b.Get all the countries with a population of less than 2 lakhs using Filter function
+	
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "https://restcountries.eu/rest/v2/all");
+
+			xhr.onload = function () {
+			  var data = JSON.parse(this.response);
+			 
+			  data.filter((element) => {
+					if(element.population<200000)
+					console.log (`Country : ${element.name},Population : ${element.population}`);  
+			});
+
+			};
+			xhr.onerror = function () {
+			  console.log("Error", this.statusText);
+			};
+
+			xhr.send();
+			
+	c:Print the following details name, capital, flag using forEach function
+	
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "https://restcountries.eu/rest/v2/all");
+
+			xhr.onload = function () {
+			  var data = JSON.parse(this.response);
+
+			  data.forEach(function (element) 
+			   {
+					console.log (`Name: ${element.name} , Capital: ${element.capital}, Flag: ${element.flag}`);
+			   });
+
+			};
+			xhr.onerror = function () {
+			  console.log("Error", this.statusText);
+			};
+
+			xhr.send();
+			
+	d:Print the total population of countries using reduce function
+	
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "https://restcountries.eu/rest/v2/all");
+
+			xhr.onload = function () {
+			  var data = JSON.parse(this.response);
+
+			  let pop=data.map((element) => {
+					return (element.population);
+			  });
+
+			let sumpop=pop.reduce((curr,prev) => {
+					return prev+=curr;
+			},0);
+			console.log(`Total Population of countries : ${sumpop}`);
+
+			};
+			xhr.onerror = function () {
+			  console.log("Error", this.statusText);
+			};
+
+			xhr.send();
+			
+	e:Print the country which uses US Dollars as currency.
+	
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "https://restcountries.eu/rest/v2/all");
+
+			xhr.onload = function () {
+			  var data = JSON.parse(this.response);
+
+			  data.filter((element) => {
+					if(element.currencies[0].symbol=="$")
+					console.log (`Country which uses US $ currency: ${element.name}`);
+			  });
+
+			};
+			xhr.onerror = function () {
+			  console.log("Error", this.statusText);
+			};
+
+			xhr.send();
