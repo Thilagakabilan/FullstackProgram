@@ -1,0 +1,54 @@
+1.bugs in below snippet
+
+<html lang="en">
+    <head>
+        <title>Document
+            <body> <!-- <body> should start after end tag of haed</head>-->
+                guvi
+        </title>
+    </head>
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        <div> <!--the div tag should be ended </div>-->
+            <div>
+                Guvi Geek Network
+            </div>
+        </body>
+    </html>
+    
+  
+ 2.
+  
+<html lang="en">
+    <head>
+        <title>Document
+    </title>
+</head>
+<body>
+    guvi
+<div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+</div>   <!-- there is no end tag for div-->
+        <div>
+            Guvi Geek Network
+        </div>
+    </body>
+</html>
+
+
+3.Contact Us form
+
+<body>
+   <h1>CONTACT US!</h1>
+    <form action="https://www.guvi.in/" method="GET">
+        <label for="yourname">Your Name</label>
+        <input type="text" name="yourname"> <br><br>
+        <label for="emailaddress">Email Address</label>
+        <input type="text" name="emailaddress"> <br><br>
+        <label for="message">Message</label>
+        <input type="text" name="message"> <br><br>
+        <input type="submit" value="Send">
+    </form>
+
+ </body>
+    
